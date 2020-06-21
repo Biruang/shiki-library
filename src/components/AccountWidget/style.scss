@@ -1,0 +1,129 @@
+@import "src/assets/scss/index";
+
+.account-widget{
+  height: calc(#{$header-height} + 3px);
+  position: relative;
+}
+
+.account-widget-login{
+  background-color: transparent;
+  height: 30px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: $color-attention;
+  border-radius: 15px;
+  border: 2px $color-attention solid;
+  cursor: pointer;
+}
+
+.account-widget-login:focus{
+  outline: none;
+}
+
+.account-widget-login:hover{
+  background-color: darken($color-background, 10%);
+}
+
+.account-widget-main{
+  display: flex;
+  align-items: center;
+  height: calc(100% - 2px);
+  cursor: pointer;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+}
+
+.account-widget-main:hover{
+  background-color: $color-selection;
+}
+
+.account-widget-avatar{
+  height: 35px;
+  width: 35px;
+  border-radius: 30px;
+  background-color: $color-attention;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid $color-main;
+  margin-right: 5px;
+}
+
+.account-widget-avatar span{
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 2px;
+}
+
+.account-widget-login{
+  margin-top: 2px;
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+.account-widget-arrow{
+  width: 12px;
+  margin-top: 4px;
+  transform: rotate(90deg);
+}
+
+.account-widget-menu{
+  top: calc(#{$header-height} - 100%);
+  right: 0;
+  width: 100%;
+  position: absolute;
+  background-color: $color-selection;
+  opacity: 0;
+  z-index: 4;
+  height: 0;
+}
+
+.account-widget:hover .account-widget-menu{
+  animation: 0.5s ease menu;
+  top: calc(#{$header-height + $header-border-width + 1px});
+  opacity: 1;
+  height: auto;
+
+  @keyframes menu {
+    from{
+      top: calc(#{$header-height + $header-border-width} - 100%);
+      opacity: 0;
+      height: 0;
+    }
+    to{
+      top: calc(#{$header-height + $header-border-width});
+      opacity: 1;
+      height: auto;
+    }
+  }
+}
+
+.account-widget:hover .account-widget-main{
+  background-color: $color-selection;
+}
+
+.account-widget-menu-el{
+  width: calc(100% - 30px);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-decoration: none;
+  font-family: "SourceSansPro", sans-serif;
+  font-size: 16px;
+  color: $color-main;
+  padding-right: 15px;
+  padding-left: 15px;
+  height: 0;
+}
+
+.account-widget:hover .account-widget-menu-el{
+  height: 50px;
+}
+
+.account-widget-menu-el:hover{
+  background-color: lighten($color-selection, 10%);
+}

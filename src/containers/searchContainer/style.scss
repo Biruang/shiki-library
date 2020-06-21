@@ -1,0 +1,33 @@
+@import "src/assets/scss/index";
+
+.search-header{
+  background: $color-background;
+  color: $color-main;
+  border-bottom: $header-border-width solid $color-main;
+  height: $header-height;
+}
+
+.search-header-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  max-width: 1260px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.search-header-logo{
+  text-decoration: none;
+  color: $color-main;
+}
+
+.search-header-logo h1{
+  margin: 0;
+}
+
+.search-main{
+  height: calc(100vh - #{$header-height + $header-border-width});
+}
